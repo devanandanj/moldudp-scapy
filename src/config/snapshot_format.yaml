@@ -1,0 +1,26 @@
+#
+# Created by devanandan : 19-08-2026
+#
+
+# Field widths/counts for the FPGA book-snapshot wire format.
+# Adjust here if your Order/BookLevel typedefs differ — nothing
+# else in the codebase should need to change.
+
+header:
+  bid_count:  { width: 1, type: uint }   # u8
+  ask_count:  { width: 1, type: uint }   # u8
+  sequence:   { width: 2, type: uint }   # u16 BE — snapshot tag, detects drops/reorder
+
+order_record:
+  fields:
+    - { name: price,    width: 4, type: uint }   # u32 BE
+    - { name: quantity, width: 4, type: uint }   # u32 BE
+    - { name: orderId,  width: 8, type: uint }   # u64 BE
+  # record size = sum of field widths = 16 bytes
+
+max_orders_per_side: 32
+byte_order: big   # BE, matches ITCH/MoldUDP64 convention already used elsewhere
+
+sort_key: orderId
+sort_order: ascending
+sorted_on_arrival: true
