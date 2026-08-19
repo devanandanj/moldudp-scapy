@@ -1,15 +1,8 @@
-
 #
 # Created by devanandan : 19-08-2026
 #
 
 import struct
-
-# ITCH 5.0 message layouts, standard spec.
-# CONFIRM THESE AGAINST Orderbook-cpp's parse_add/parse_delete/parse_execute/
-# parse_replace BEFORE trusting them — these are from the public spec, not
-# verified against your actual C++ offsets yet.
-
 
 def build_add_order(
         stock_locate: int,

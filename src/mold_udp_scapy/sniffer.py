@@ -1,4 +1,3 @@
-
 #
 # Created by devanandan : 19-08-2026
 #
@@ -16,9 +15,7 @@ def handle_packet(pkt):
 
 def start_sniffing(iface: str, udp_port: int):
     """
-    Blocks and listens until Ctrl+C.
-    iface: exact interface name from list_ifaces.py
-    udp_port: whatever port you decide the FPGA trace-out uses
+    Blocks and listens until closed.
     """
     bpf_filter = f"udp port {udp_port}"
     print(f"Listening on {iface}, filter: '{bpf_filter}'")
