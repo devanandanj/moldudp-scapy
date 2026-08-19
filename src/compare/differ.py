@@ -12,8 +12,8 @@ Correlation is by index: entries[i] <-> snapshots[i]
 
 from dataclasses import dataclass
 
-from snapshot.trace_parser import TraceEntry, OrderLevel
-from snapshot.struct_unpacker import SnapshotEntry
+from src.snapshot.trace_parser import TraceEntry, OrderLevel
+from src.snapshot.struct_unpacker import SnapshotEntry
 
 
 @dataclass

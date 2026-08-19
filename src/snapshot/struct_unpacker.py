@@ -14,7 +14,7 @@ import yaml
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from snapshot.trace_parser import OrderLevel
+from src.snapshot.trace_parser import OrderLevel
 
 
 @dataclass
